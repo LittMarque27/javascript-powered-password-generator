@@ -12,10 +12,10 @@ var delta = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/
 
 
 
-function userDetermines {
-  var parseLength= window.prompt("Enter your desired password length (Choose between 8 and 128)");
-  var chooseLength = parseInt(parseLength);
-  if (is NaN(parsed)) {return null};
+function userDetermines() {
+  var parseLength = window.prompt("Enter your desired password length (Choose between 8 and 128)");
+  var chooseLength =parseInt(parseLength);
+  if (isNaN(parsed)) {return null};
   if (parseLength > 128) {return null};
   if (parseLength < 8) {return null};
  
@@ -27,13 +27,15 @@ function userDetermines {
   if (!chooseUpper && !chooseLower && !chooseNumber && !chooseSpecial) {
     return null
   }
-var answerData = {
-  pwLength: 
-  pwLower:
-  pwNumber:
+// var answerData = {
+//   pwLength: 
+//   pwLower:
+//   pwNumber:
 
+// };
 };
-}
+
+userDetermines();
 
 
 
