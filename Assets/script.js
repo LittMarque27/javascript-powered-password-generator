@@ -10,29 +10,50 @@ var gamma = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 //Modifier "D"
 var delta = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
 
+var omega = []
 
+var test = ""
 
 function userDetermines() {
   var parseLength = window.prompt("Enter your desired password length (Choose between 8 and 128)");
-  var chooseLength =parseInt(parseLength);
-  if (isNaN(parsed)) {return null};
+  var chooseLength = parseInt(parseLength);
+  console.log(chooseLength);
+  // if (isNaN(parsed)) {return null};
   if (parseLength > 128) {return null};
   if (parseLength < 8) {return null};
  
   var chooseUpper = window.confirm("Do you want to include uppercase letters?");
   var chooseLower = window.confirm("Do you want to include lowercase letters?");
   var chooseNumber = window.confirm("Do you want to include numbers?");
-  var chooseSpecial = window.confirm("Do you want to include special characters (For Example: !, ?, $, etc.)?")
+  var chooseSpecial = window.confirm("Do you want to include special characters (For Example: !, ?, $, etc.)?");
 
   if (!chooseUpper && !chooseLower && !chooseNumber && !chooseSpecial) {
     return null
   }
-// var answerData = {
-//   pwLength: 
-//   pwLower:
-//   pwNumber:
 
-// };
+  if (chooseUpper) {
+    omega = omega.concat(alpha)
+  }
+  if (chooseLower) {
+    omega = omega.concat(beta)
+  }
+  if (chooseNumber) {
+    omega = omega.concat(gamma)
+  }
+  if (chooseSpecial) {
+    omega = omega.concat(delta)
+  }
+  
+  console.log(omega)
+
+  for (var i = 0; i < (chooseLength); i++) {
+    var single = Math.floor(Math.random() * omega.length);
+    var char = omega[single];
+    test += char;
+    console.log(test);
+  }
+  
+  window.alert ("Your new password is: " + test)
 };
 
 userDetermines();
