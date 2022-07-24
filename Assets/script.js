@@ -11,6 +11,32 @@ var gamma = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var delta = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
 
 
+
+function userDetermines {
+  var parseLength= window.prompt("Enter your desired password length (Choose between 8 and 128)");
+  var chooseLength = parseInt(parseLength);
+  if (is NaN(parsed)) {return null};
+  if (parseLength > 128) {return null};
+  if (parseLength < 8) {return null};
+ 
+  var chooseUpper = window.confirm("Do you want to include uppercase letters?");
+  var chooseLower = window.confirm("Do you want to include lowercase letters?");
+  var chooseNumber = window.confirm("Do you want to include numbers?");
+  var chooseSpecial = window.confirm("Do you want to include special characters (For Example: !, ?, $, etc.)?")
+
+  if (!chooseUpper && !chooseLower && !chooseNumber && !chooseSpecial) {
+    return null
+  }
+var answerData = {
+  pwLength: 
+  pwLower:
+  pwNumber:
+
+};
+}
+
+
+
 // Write a function { 
     // Research parseInt() 
     // Prompt "How many characters would you like your pw to be" (wrapped in parseInt)
@@ -37,6 +63,20 @@ var delta = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/
 // Here write a funtion to generate pw
 
 // 
+
+
+// var omega = alpha.concat(beta, gamma, delta);
+// // console.log(omega);
+
+// var test = "";
+
+
+// for (var i = 0; i < 16; i++) {
+//   var single = Math.floor(Math.random() * omega.length);
+//   var char = omega[single];
+//   test += char;
+//   console.log(char);
+// }
 
 
 
