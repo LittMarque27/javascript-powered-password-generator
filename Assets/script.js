@@ -1,73 +1,74 @@
-//Modifier "A"
+//Establishing Arrays for each character type
 var alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-//Modifier "B"
-var beta = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var beta = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-//Modifier "C"
-var gamma = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+var gamma = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-//Modifier "D"
-var delta = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"] 
+var delta = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-var omega = []
+//Blank omnibus array for condiitional concatenation 
+var omega = [];
 
-var test = ""
+//Blank Global String for password generation
+var test = "";
 
+//Password Generation Function
 function userDetermines() {
+  //Parse will turn string into number; NaN will return null; length outside of limits will return null
   var parseLength = window.prompt("Enter your desired password length (Choose between 8 and 128)");
   var chooseLength = parseInt(parseLength);
   console.log(chooseLength);
   if (isNaN(chooseLength)) {
-    window.alert("Please enter a numerical value between 8 and 128 characters")
+    window.alert("Please enter a numerical value between 8 and 128 characters. Click the Generate Password button to start again.");
     return null};
-  // if (parseLength > 128) {return null};
-  // if (parseLength < 8) {return null};
   if (parseLength > 128 || parseLength < 8) {
-    window.alert("Please enter a password length between 8 and 128 characters");
+    window.alert("Please enter a password length between 8 and 128 characters. Click the Generate Password button to start again.");
     console.log(this.userDetermines);
-    return null;
-  }
+    return null
+  };
  
+  //Variables and confirms for character types; chooing no types will return null
   var chooseUpper = window.confirm("Do you want to include uppercase letters?");
   var chooseLower = window.confirm("Do you want to include lowercase letters?");
   var chooseNumber = window.confirm("Do you want to include numbers?");
   var chooseSpecial = window.confirm("Do you want to include special characters (For Example: !, ?, $, etc.)?");
 
   if (!chooseUpper && !chooseLower && !chooseNumber && !chooseSpecial) {
+    window.alert("Please choose at least one character type. Click the Generate Password button to start again.");
     return null
-  }
+  };
 
+  //Variables that are true will concat the appropriate array
   if (chooseUpper) {
     omega = omega.concat(alpha)
-  }
+  };
   if (chooseLower) {
     omega = omega.concat(beta)
-  }
+  };
   if (chooseNumber) {
     omega = omega.concat(gamma)
-  }
+  };
   if (chooseSpecial) {
     omega = omega.concat(delta)
-  }
+  };
   
-  console.log(omega)
+  console.log(omega);
 
+  //For Loop will choose characters at random from the concatted array until it reaches the user's desired length
   for (var i = 0; i < (chooseLength); i++) {
     var single = Math.floor(Math.random() * omega.length);
     var char = omega[single];
     test += char;
-    console.log(test);
-  }
+    console.log(test)
+  };
   
-  window.alert ("Your new password is: " + test)
+  //Password id displayed as an alert; Gradin Criteria allowed for this
+  window.alert ("Your new password is: " + test);
 };
 
-// userDetermines();
 
-
-
-// Assignment Code
+// Utilized Assignment Started Code to being the userDetermines function with the click of the "Generate Password." Text Generation commented out because I am not using it.
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -81,54 +82,5 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-// Write a function { 
-    // Research parseInt() 
-    // Prompt "How many characters would you like your pw to be" (wrapped in parseInt)
-    // If pw >= 8 or <= 128 proceed; if not ask for new value
-    
-    // Write a conditional if user enters NaN return null
-
-    // Write a conditional if the length is greater than 128 return null
-
-    // Write a conditional if the length is less than 8 return null
-
-    // Research confirm() built in javascript function (4x)
-
-    // write a condiitonal in the event that a user doesn't select anything 
-
-    // Now make an object that stores the user input (choices they made) (5 things contained: length, t/f answers) 
-        //EXAMPLE: const car = {type:"Fiat", model:"500", color:"white"};
-        //return variable for the object
-//}
-
-// Here write a function for getting random characters
-
-
-// Here write a funtion to generate pw
-
-// 
-
-
-// var omega = alpha.concat(beta, gamma, delta);
-// // console.log(omega);
-
-// var test = "";
-
-
-// for (var i = 0; i < 16; i++) {
-//   var single = Math.floor(Math.random() * omega.length);
-//   var char = omega[single];
-//   test += char;
-//   console.log(char);
-// }
-
-
-
 
