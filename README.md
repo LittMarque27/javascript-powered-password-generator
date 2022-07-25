@@ -48,7 +48,7 @@ And lastly, special characters:
 
 ## Password Generated
 
-After navigating these steps, you password will be generated and displayed in a window alert:
+After navigating these steps, your password will be generated and displayed in a window alert:
 
 ![Your new password](./Assets/images/finished-password.png)
 
