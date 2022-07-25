@@ -8,7 +8,7 @@ var beta = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"
 var gamma = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 //Modifier "D"
-var delta = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
+var delta = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"] 
 
 var omega = []
 
@@ -18,9 +18,16 @@ function userDetermines() {
   var parseLength = window.prompt("Enter your desired password length (Choose between 8 and 128)");
   var chooseLength = parseInt(parseLength);
   console.log(chooseLength);
-  // if (isNaN(parsed)) {return null};
-  if (parseLength > 128) {return null};
-  if (parseLength < 8) {return null};
+  if (isNaN(chooseLength)) {
+    window.alert("Please enter a numerical value between 8 and 128 characters")
+    return null};
+  // if (parseLength > 128) {return null};
+  // if (parseLength < 8) {return null};
+  if (parseLength > 128 || parseLength < 8) {
+    window.alert("Please enter a password length between 8 and 128 characters");
+    console.log(this.userDetermines);
+    return null;
+  }
  
   var chooseUpper = window.confirm("Do you want to include uppercase letters?");
   var chooseLower = window.confirm("Do you want to include lowercase letters?");
@@ -56,7 +63,28 @@ function userDetermines() {
   window.alert ("Your new password is: " + test)
 };
 
-userDetermines();
+// userDetermines();
+
+
+
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  userDetermines();
+  var password = generatePassword();
+  // var passwordText = document.querySelector("#password");
+
+  // passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
+
+
 
 
 
@@ -103,17 +131,4 @@ userDetermines();
 
 
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
