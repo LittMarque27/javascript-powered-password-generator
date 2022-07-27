@@ -8,7 +8,7 @@ After opening the page the user can begin generating their password by clicking 
 
 ![Full Site Screenshot](./Assets/images/full-generator.png)
 
-##Choosing the Length of Your Password
+## Choosing the Length of Your Password
 
 The first prompt will ask you how many characters in length you'd like your password to be. Lengths between 8 and 128 characters are valid:
 
@@ -48,7 +48,7 @@ And lastly, special characters:
 
 ## Password Generated
 
-After navigating these steps, you password will be generated and displayed in a window alert:
+After navigating these steps, your password will be generated and displayed in a window alert:
 
 ![Your new password](./Assets/images/finished-password.png)
 
