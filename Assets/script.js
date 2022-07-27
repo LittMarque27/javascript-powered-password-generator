@@ -10,8 +10,6 @@ var delta = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/
 //Blank omnibus array for condiitional concatenation 
 var omega = [];
 
-//Blank Global String for password generation
-var test = "";
 
 //Password Generation Function
 function userDetermines() {
@@ -54,6 +52,9 @@ function userDetermines() {
   };
   
   console.log(omega);
+
+  //Moved out of global scope to fix password stacking bug
+  var test = "";
 
   //For Loop will choose characters at random from the concatted array until it reaches the user's desired length
   for (var i = 0; i < (chooseLength); i++) {
